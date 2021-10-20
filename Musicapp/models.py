@@ -50,3 +50,23 @@ class Show1(models.Model):
     
 #     def __str__(self):
 #         return self.artiste_name   
+
+class YouTube(models.Model):
+    name = models.CharField(max_length=200)
+    VideoId = models.CharField(max_length=200)
+    updated  = models.DateTimeField(auto_now=True)
+    
+    def __str__(self):
+        return self.name
+
+class YouTubesecond(models.Model):
+    updated  = models.DateTimeField(auto_now=True)
+    name = models.CharField(max_length=200)
+    vidId = models.CharField(max_length=200)
+    
+    def __str__(self):
+        return self.name
+    
+# #news hero picture
+# class heropic(models.Model):
+#     image  = models.ImageField(upload_to = "pictures")

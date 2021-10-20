@@ -960,7 +960,7 @@ ul.pages-music li a {
 }
 
 .hero {
-	background-image: url("/static/images/misc/hero-img.jpg");
+	background-image: url("/static/images/blog/vbuq.png");
 	height: 320px;
 	background-position: center;
 	background-repeat: no-repeat;
@@ -1367,6 +1367,7 @@ div li.hide {
 @media all and (min-width: 481px) {
 .span {
     width: 33%;
+	text-align: center;
 
 }
 
@@ -1375,5 +1376,6 @@ div li.hide {
 }
 
 }
+
 
 /**********************************************************************************************************/
