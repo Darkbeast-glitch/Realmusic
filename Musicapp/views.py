@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Show,Show1,YouTube,YouTubesecond
+from .models import Show,Show1,YouTube,YouTubesecond,Post
 # Create your views here.
 
 def Home_view(request):
@@ -16,7 +16,7 @@ def Home_view(request):
         'shows':shows,
         'show1':show1,
         'youtube': youtube,
-        'youtube1':youtube1
+        'youtube1':youtube1,
        
        
     }
@@ -25,11 +25,17 @@ def Home_view(request):
 
 #blog news
 def VbuqsNews(request):
-    another_context = {}
+    another_context = {
+        
+    }
     
     return render (request, "blog_tour.html", another_context)
 
 def News(request):
-    context_again = {}
+    post = Post.objects.all()
+    
+    context_again = {
+      'post':post, 
+    }
     
     return render(request, 'Vbuqsnews.html', context_again)

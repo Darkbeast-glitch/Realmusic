@@ -69,29 +69,87 @@
 <section id="services" class="services service-section">
   <div class="container">
   <div class="section-header">
-                <h2 class="wow fadeInDown animated">We Do</h2>
-                <p class="wow fadeInDown animated">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eget risus vitae massa <br> semper aliquam quis mattis quam.</p>
+                <h2 class="wow fadeInDown animated">Latest Trending News</h2>
+                <p class="wow fadeInDown animated">Get the lates trending news here on Vbuqs world , what ever goes on in the urban gospel world here in ghana <br>is given right here on VBUQS WORLD.</p>
             </div>
+    
     <div class="row"> 
       <div class="col-md-4 col-sm-6 services text-center"> <span class="icon icon-recycle"></span>
         <div class="services-content">
-          <h5>ALBUMS</h5>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu libero scelerisque ligula sagittis faucibus eget quis lacus.</p>
+          {%for posts in post%}
+          <img src="/static/images/blog/kobby.jpg"  class="img-thumbnail"alt="">
+          
+                <h5>{{posts.title}}</h5>
+                <p>{{posts.content}}.</p>
+                <hr>
+                <h6>Published:{{posts.timestamp}} </h6>
+                <h6>Published By: VBUQS </h6>
+              
+              <a href="{% url 'home'%}" class="btn btn-info" role="button">Read More</a>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 services text-center"> <span class="icon icon-heart"></span>
+            <div class="services-content">
+              <img src="/static/images/blog/scott.jpg"  class="img-thumbnail"alt="">
+              <h5>Mapeke is  flying that most secular song</h5>
+              <p>Scott Evans the Mapeke hit maker has come out saying his "MAPEKE" song is doing far better than most of the Ghanaian secular songs.</p>
+              <hr>
+              <h6>Published:{{posts.timestamp}} </h6>
+                <h6>Published By: VBUQS </h6>
+              <a href="{% url 'home'%}" class="btn btn-info" role="button">Read More</a>
+            </div>
+          </div> 
+          <div class="col-md-4 col-sm-6 services text-center"> <span class="icon icon-megaphone"></span>
+            <div class="services-content">
+              <img src="/static/images/blog/kingzkid.jpg"  class="img-thumbnail"alt="">
+              <h5>Kingkid Came out with a new banger go check it out </h5>
+              <p>Not for the Clouts featuring Regardless by Kingzkid is an urban gospel wave that speaks about the things he  does which is not for the clouts but rather for the crown .</p>
+              <hr>
+              <h6>Published:{{posts.timestamp}} </h6>
+              <h6>Published By: VBUQS </h6>
+              <a href="{% url 'home'%}" class="btn btn-info" role="button">Read More</a>
+            </div>
+          </div> 
         </div>
+        <br><br>
+          <hr>
+        
+        <div class="col-md-4 col-sm-6 services text-center"> <span class="icon icon-recycle"></span>
+          <div class="services-content">
+            <img src="/static/images/blog/kobby.jpg"  class="img-thumbnail"alt="">
+            <h5>Kobby Salm - This Is US ep</h5>
+            <p>Kobby salm is embarking on a journey to put the young urban gospel rappers on a tune he has called "This is Us ep" Trooth Gave a serious heat on that and more are yet to deliver just wait on it .</p>
+            <hr>
+            <h6>Published:{{posts.timestamp}} </h6>
+            <h6>Published By: VBUQS </h6>
+            <a href="{% url 'home'%}" class="btn btn-info" role="button">Read More</a>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-6 services text-center"> <span class="icon icon-heart"></span>
+          <div class="services-content">
+            <img src="/static/images/blog/scott.jpg"  class="img-thumbnail"alt="">
+            <h5>Mapeke is  flying that most secular song</h5>
+            <p>Scott Evans the Mapeke hit maker has come out saying his "MAPEKE" song is doing far better than most of the Ghanaian secular songs.</p>
+            <hr>
+            <h6>Published:{{posts.timestamp}} </h6>
+            <h6>Published By: VBUQS </h6>
+            <a href="{% url 'home'%}" class="btn btn-info" role="button">Read More</a>
+          </div>
+        </div> 
+      
+        <div class="col-md-4 col-sm-6 services text-center"> <span class="icon icon-megaphone"></span>
+          <div class="services-content">
+            <img src="/static/images/blog/kingzkid.jpg"  class="img-thumbnail"alt="">
+            <h5>Kingkid Came out with a new banger go check it out </h5>
+            <p>Not for the Clouts featuring Regardless by Kingzkid is an urban gospel wave that speaks about the things he  does which is not for the clouts but rather for the crown .</p>
+            <hr>
+            <h6>Published:{{posts.timestamp}} </h6>
+            <h6>Published By: VBUQS </h6>
+            <a href="{% url 'home'%}" class="btn btn-info" role="button">Read More</a>
+          </div>
+        </div> 
       </div>
-      <div class="col-md-4 col-sm-6 services text-center"> <span class="icon icon-heart"></span>
-        <div class="services-content">
-          <h5>MUSIC PLAYLIST</h5>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu libero scelerisque ligula sagittis faucibus eget quis lacus.</p>
-        </div>
-      </div> 
-      <div class="col-md-4 col-sm-6 services text-center"> <span class="icon icon-megaphone"></span>
-        <div class="services-content">
-          <h5>GALLERY</h5>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu libero scelerisque ligula sagittis faucibus eget quis lacus.</p>
-        </div>
-      </div> 
-    </div>
+  {% endfor%}
   </div>
 </section>
 <!-- services section --> 
@@ -100,7 +158,7 @@
   <div class="container">
       <div class="section-header">
                 <h2 class="wow fadeInDown animated">VBUQS - Charts Playlist<h2>
-                <p class="wow fadeInDown animated">Song are arranged in order of trending of the week, Click on the song and listen online for free</p>
+                <p class="wow fadeInDown animated">Songs are arranged in order of trendings of the week, Click on the song and listen online for free,</p>
             </div>
     <div class="row">  
          <div id="jquery_jplayer_2" class="jp-jplayer"></div>
@@ -151,7 +209,7 @@
 <section id="package" class="packageList">
   <div class="container">
       <div class="section-header">
-                <h2 class="wow fadeInDown animated">Our Albums</h2>
+                <h2 class="wow fadeInDown animated">Recent Trending News</h2>
                 <p class="wow fadeInDown animated">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eget risus vitae massa <br> semper aliquam quis mattis quam.</p>
             </div>
     <div class="row">  
@@ -536,54 +594,55 @@ $(document).ready(function(){
 		cssSelectorAncestor: "#jp_container_2"
 	},
    [
-		{
+   {
 			title:"Scott Evans - Mapeke",
-			mp3:"http://www.jplayer.org/audio/mp3/TSP-01-Cro_magnon_man.mp3",
-			oga:"http://www.jplayer.org/audio/ogg/TSP-01-Cro_magnon_man.ogg"
-		},
-		{
-			title:"Your Face",
 			mp3:"http://www.jplayer.org/audio/mp3/TSP-05-Your_face.mp3",
 			oga:"http://www.jplayer.org/audio/ogg/TSP-05-Your_face.ogg"
 		},
 		{
-			title:"Cyber Sonnet",
+			title:"Seth Diamond Ft Kofi Kinaata - My Hour",
+			mp3:"https://classic-gh.com/wp-content/uploads/2021/08/Seth-Diamond_My-Hour-ft-Kofi_Kinaata.mp3",
+			oga:"https://classic-gh.com/wp-content/uploads/2021/08/Seth-Diamond_My-Hour-ft-Kofi_Kinaata.mp3"
+		},
+	
+		{
+			title:"P.O Godson - Adwuma",
 			mp3:"http://www.jplayer.org/audio/mp3/TSP-07-Cybersonnet.mp3",
 			oga:"http://www.jplayer.org/audio/ogg/TSP-07-Cybersonnet.ogg"
 		},
 		{
-			title:"Tempered Song",
+			title:"Kneeded Official - Hopeful",
 			mp3:"http://www.jplayer.org/audio/mp3/Miaow-01-Tempered-song.mp3",
 			oga:"http://www.jplayer.org/audio/ogg/Miaow-01-Tempered-song.ogg"
 		},
 		{
-			title:"Hidden",
+			title:"The Flyboy - We Gon Be Alright",
 			mp3:"http://www.jplayer.org/audio/mp3/Miaow-02-Hidden.mp3",
 			oga:"http://www.jplayer.org/audio/ogg/Miaow-02-Hidden.ogg"
 		},
 		{
-			title:"Lentement",
+			title:"Belac360 - Yaa Sormor",
 			free:true,
 			mp3:"http://www.jplayer.org/audio/mp3/Miaow-03-Lentement.mp3",
 			oga:"http://www.jplayer.org/audio/ogg/Miaow-03-Lentement.ogg"
 		},
 		{
-			title:"Lismore",
+			title:"Rush The High Priest - M'bra",
 			mp3:"http://www.jplayer.org/audio/mp3/Miaow-04-Lismore.mp3",
 			oga:"http://www.jplayer.org/audio/ogg/Miaow-04-Lismore.ogg"
 		},
 		{
-			title:"The Separation",
+			title:"Gottlieb - Lil Jeremiah",
 			mp3:"http://www.jplayer.org/audio/mp3/Miaow-05-The-separation.mp3",
 			oga:"http://www.jplayer.org/audio/ogg/Miaow-05-The-separation.ogg"
 		},
 		{
-			title:"Beside Me",
+			title:"Kasa Musik - CEO FLOW",
 			mp3:"http://www.jplayer.org/audio/mp3/Miaow-06-Beside-me.mp3",
 			oga:"http://www.jplayer.org/audio/ogg/Miaow-06-Beside-me.ogg"
 		},
 		{
-			title:"Bubble",
+			title:"Imani ft Kwame Angelo - Rejoice",
 			free:true,
 			mp3:"http://www.jplayer.org/audio/mp3/Miaow-07-Bubble.mp3",
 			oga:"http://www.jplayer.org/audio/ogg/Miaow-07-Bubble.ogg"
@@ -593,17 +652,6 @@ $(document).ready(function(){
 			mp3:"http://www.jplayer.org/audio/mp3/Miaow-08-Stirring-of-a-fool.mp3",
 			oga:"http://www.jplayer.org/audio/ogg/Miaow-08-Stirring-of-a-fool.ogg"
 		},
-		{
-			title:"Partir",
-			free: true,
-			mp3:"http://www.jplayer.org/audio/mp3/Miaow-09-Partir.mp3",
-			oga:"http://www.jplayer.org/audio/ogg/Miaow-09-Partir.ogg"
-		},
-		{
-			title:"Thin Ice",
-			mp3:"http://www.jplayer.org/audio/mp3/Miaow-10-Thin-ice.mp3",
-			oga:"http://www.jplayer.org/audio/ogg/Miaow-10-Thin-ice.ogg"
-		}
 	], {
 		swfPath: "../../dist/jplayer",
 		supplied: "oga, mp3",

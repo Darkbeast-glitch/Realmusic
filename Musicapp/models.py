@@ -1,4 +1,8 @@
 from django.db import models
+from django.contrib.auth.models import User
+from django.utils import timezone
+import math
+
 
 # Create your models here.
 
@@ -13,6 +17,9 @@ class Home(models.Model):
     #save time when modified
     updated = models.DateTimeField(auto_now=True)
     
+     
+    class Meta:
+        verbose_name_plural = "Home"
     def __str__(self):
         return self.name
     
@@ -27,6 +34,10 @@ class Show(models.Model):
     link = models.URLField(max_length=1000)
     updated  = models.DateTimeField(auto_now=True)
     
+    
+     
+    class Meta:
+        verbose_name_plural = "Home"
     def __str__(self):
         return self.name
 #show1 for second program 
@@ -38,6 +49,9 @@ class Show1(models.Model):
     link = models.URLField(max_length=1000)
     updated  = models.DateTimeField(auto_now=True)
     
+     
+    class Meta:
+        verbose_name_plural = "Show1"
     def __str__(self):
         return self.name
 
@@ -56,6 +70,9 @@ class YouTube(models.Model):
     VideoId = models.CharField(max_length=200)
     updated  = models.DateTimeField(auto_now=True)
     
+     
+    class Meta:
+        verbose_name_plural = "YouTube"
     def __str__(self):
         return self.name
 
@@ -64,9 +81,30 @@ class YouTubesecond(models.Model):
     name = models.CharField(max_length=200)
     vidId = models.CharField(max_length=200)
     
+    class Meta:
+        verbose_name_plural = "YouTubesecond"
     def __str__(self):
         return self.name
     
 # #news hero picture
 # class heropic(models.Model):
 #     image  = models.ImageField(upload_to = "pictures")
+
+class Post(models.Model):
+    title = models.CharField(max_length=200)
+    slug = models.SlugField(unique=True)
+    image = models.ImageField(upload_to = "pictures/", 
+                              null =True,
+                              blank = True,
+                              )
+    content = models.TextField()
+    draft = models.BooleanField(default=False)
+    publish = models.DateField(auto_now=False, auto_now_add=False)
+    updated = models.DateTimeField(auto_now=False,auto_now_add=True)
+    timestamp  = models.DateTimeField(auto_now=False,auto_now_add=True)
+    
+    
+    def __str__(self):
+        return self.title
+    class Meta:
+        verbose_name_plural = "Post"
